@@ -14,12 +14,10 @@ spec:
     spec:
       containers:
         - name: node
-          image: ayushyadav100/demo-app:latest
+          image: ayushyadav100/node-demo:latest   # ✅ FIXED
+          imagePullPolicy: Always
           ports:
             - containerPort: 3000
           readinessProbe:
             httpGet:
               path: /
-              port: 3000
-            initialDelaySeconds: 5
-            periodSeconds: 10
